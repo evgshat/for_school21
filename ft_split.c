@@ -6,14 +6,19 @@
 /*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 12:32:29 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/20 18:53:35 by a19060383        ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:55:54 by a19060383        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+// мин тесты проходят
 
 // перепроверить путь в include
 // использовать free
 // удалить мейн
 // проверить вариант, если символ с вообще не встречается
+// почему-то в конце процент
+// надо ли переносить на новую строку?
+// пофиксить шапку (надо чтобы мое имя было)
 
 #include "../for_school21/libft.h"
 
@@ -22,11 +27,11 @@ char **ft_split(char const *s, char c)
 	char **new_s;
 	int i;
 	int j;
-	int se;
+	int k;
 
-	i = 0;
-	j = 1;
-	se = 0;
+	i 	= 0;
+	j 	= 2;
+	k 	= 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -51,14 +56,21 @@ char **ft_split(char const *s, char c)
 		{
 			if (s[i] != c)
 			{
-				new_s[j][i] = s[i];
+				new_s[j][k] = s[i];
+			}
+			if (s[i] == c)
+			{
+				new_s[j][k] = '\0';
+				j++;
+				k = -1;
 			}
 			i++;
+			k++;
 		}
 	return (new_s);
 }
 
 int main()
 {
-	printf ("%s %s\n", ft_split("Hellhhhoowworld", 'o')[0], ft_split("Hellhhhoworld\0", 'o')[1]);
+	printf ("%s %s %s", ft_split("Hellotworld", 'o')[0], ft_split("Hellotworld", 'o')[1], ft_split("Hellotworld", 'o')[2]);
 }
