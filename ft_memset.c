@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
+/*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 18:07:22 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/24 18:30:43 by a19060383        ###   ########lyon.fr   */
+/*   Updated: 2021/04/25 15:19:05 by lcharlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 // void* - указатель на неопределенный тип. Нельзя присовить значения без явного преобразования этих знач к опр типу указателя
 // int c надо походу к unsigned char привести
 // write не очень работает. в итоге не написала его, а нужен ли он?
-//
 
 #include "../for_school21/libft.h"
 
@@ -33,7 +32,7 @@ void *ft_memset (void *destination, int c, size_t n)
 
 	i		= 0;
 	s		= 0;
-	new_s	= (unsigned char *)destination + sizeof(unsigned char) - 1;
+	new_s	= (unsigned char *)destination;
 	s		= (unsigned char)c;
 
 	while (i < n)
