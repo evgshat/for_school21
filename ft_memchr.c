@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 11:52:59 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/26 12:13:36 by a19060383        ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 // мин тест проходит
 
 // нужно ли что-то возвращать, если у нас NULL?
@@ -20,10 +8,10 @@
 
 #include "../for_school21/libft.h"
 
-void *ft_memchr( const void *buf, int c, size_t count)
+void	*ft_memchr( const void *buf, int c, size_t count)
 {
-	unsigned char *new_s;
-	int i;
+	unsigned char	*new_s;
+	int				i;
 
 	new_s = (unsigned char *)buf;
 	i = 0;
@@ -41,9 +29,11 @@ void *ft_memchr( const void *buf, int c, size_t count)
 	return (0);
 }
 
-int main()
+int	main(void)
 {
-	unsigned char buf[6] = "hello";
-	//printf("%s\n", (memchr(buf, '1', 2)));
+	unsigned char	buf[6];
+
+	buf[6] = "hello";
+	printf("%s\n", (memchr(buf, '1', 2)));
 	printf("%s\n", (ft_memchr(buf, 'e', 3)));
 }

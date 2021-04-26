@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 11:39:12 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/24 16:20:34 by a19060383        ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 // мин тесты проходят
 
 // удалить мейн
@@ -18,11 +6,11 @@
 
 #include "../for_school21/libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *new_s;
-	int i;
-	int j;
+	char	*new_s;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -58,7 +46,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return (new_s);
 }
 
-int main()
+int	main(void)
 {
 	printf ("%s\n", ft_strjoin("pri", "vet"));
 }

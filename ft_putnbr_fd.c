@@ -1,38 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 17:44:07 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/22 18:02:15 by a19060383        ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 // доделать
 
 // перепроверить путь в include
 // удалить мейн
 // нужна ли новая строка?
-// поменять шапку
 
 #include "../for_school21/libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *new_s;
-	int i;
-	int n_o_i;
-	int n_o[15];
+	char	*new_s;
+	int		i;
+	int		n_o_i;
+	int		n_o[15];
 
-	i		= 0;
-	n_o_i	= 0;
-
+	i = 0;
+	n_o_i = 0;
 	if (fd != 1)
 		write(1, "NULL", 5);
-	else
-		if (n < 0)
+	if (n < 0)
 	{
 		new_s[i] = '-';
 		i++;
@@ -45,10 +30,10 @@ void ft_putnbr_fd(int n, int fd)
 		n_o_i++;
 	}
 	new_s[i] = n + '0';
-	while (n_o_i-1 >= 0)
+	while (n_o_i - 1 >= 0)
 	{
 		i++;
-		new_s[i] = n_o[n_o_i-1] + '0';
+		new_s[i] = n_o[n_o_i - 1] + '0';
 		n_o_i--;
 	}
 	i = 0;
@@ -59,7 +44,7 @@ void ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int main()
+int	main(void)
 {
 	ft_putnbr_fd(49, 1);
 }

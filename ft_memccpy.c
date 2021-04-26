@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 15:42:42 by lcharlet          #+#    #+#             */
-/*   Updated: 2021/04/25 17:53:48 by lcharlet         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 // я хз как, но мин тест прошел
 
 // удалить мейн
@@ -22,13 +10,13 @@
 // надо ли проверить, что с - это интовое значение?
 #include "../for_school21/libft.h"
 
-void *ft_memccpy (void *destination, const void *source, int c, size_t n)
+void	*ft_memccpy (void *destination, const void *source, int c, size_t n)
 {
-	unsigned char *dest;
-	unsigned char *src;
-	int i;
-	int j;
-	int flag;
+	unsigned char	*dest;
+	unsigned char	*src;
+	int				i;
+	int				j;
+	int				flag;
 
 	i = 0;
 	j = 0;
@@ -36,7 +24,6 @@ void *ft_memccpy (void *destination, const void *source, int c, size_t n)
 	dest = (unsigned char *)destination;
 	src = (unsigned char *)source;
 	c = c + '0';
-
 	while (src[i] != c || i <= n)
 	{
 		if (src[i] == c)
@@ -64,16 +51,20 @@ void *ft_memccpy (void *destination, const void *source, int c, size_t n)
 	return (dest);
 }
 
-int main()
+int	main(void)
 {
-	unsigned char dest[15] = "23bkjll";
-	unsigned char scr[15] = "1234cd";
+	unsigned char	dest[15];
+	unsigned char	scr[15];
+	unsigned char	dest1[15];
+	unsigned char	scr1[15];
 
-	unsigned char dest1[15] = "23bkjll";
-	unsigned char scr1[15] = "1234cd"; // пока ТУТ не встретится символ или пока не скопируется n байт
-// нужно, чтобы символ тоже был скопирован
+	dest[15] = "23bkjll";
+	scr[15] = "1234cd";
+	dest1[15] = "23bkjll";
+	scr1[15] = "1234cd";
+	// пока ТУТ не встретится символ или пока не скопируется n байт
+	// нужно, чтобы символ тоже был скопирован
 	printf ("%s\n", memccpy(dest, scr, '4', 4));
 	printf ("%s\n", ft_memccpy(dest1, scr1, '3', 4));
-
-	//  возвращаемое значение - если символ с скопирован, memccpy вернут указатель на тот байт в dest, который следует за символом
+	// возвращаемое значение - если символ с скопирован, memccpy вернут указатель на тот байт в dest, который следует за символом
 }

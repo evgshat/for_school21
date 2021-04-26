@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 18:07:22 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/25 15:19:05 by lcharlet         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 // мин тест проходит
 
 // перепроверить путь в include
@@ -24,17 +12,16 @@
 
 #include "../for_school21/libft.h"
 
-void *ft_memset (void *destination, int c, size_t n)
+void	*ft_memset (void *destination, int c, size_t n)
 {
-	int i;
-	unsigned char *new_s;
-	char s;
+	int				i;
+	unsigned char	*new_s;
+	char			s;
 
-	i		= 0;
-	s		= 0;
-	new_s	= (unsigned char *)destination;
-	s		= (unsigned char)c;
-
+	i = 0;
+	s = 0;
+	new_s = (unsigned char *)destination;
+	s = (unsigned char)c;
 	while (i < n)
 	{
 		new_s[i] = c;
@@ -43,8 +30,10 @@ void *ft_memset (void *destination, int c, size_t n)
 	return (new_s);
 }
 
-int main()
+int	main(void)
 {
-	unsigned char scr[6] = "hello\0";
+	unsigned char	scr[6];
+
+	scr[6] = "hello\0";
 	printf("%s\n", (ft_memset(scr, '2', 3)));
 }

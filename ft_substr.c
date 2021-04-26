@@ -1,26 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/18 14:50:05 by lcharlet          #+#    #+#             */
-/*   Updated: 2021/04/18 16:31:20 by lcharlet         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "../for_school21/libft.h"
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *new_s;
-	size_t chet;
+	char	*new_s;
+	size_t	chet;
 
 	chet = 0;
-	new_s = (char*)malloc(len + 1);
+	new_s = (char *) malloc(len + 1);
 	if (new_s != 0)
 	{
 		while (chet < len)
@@ -38,7 +24,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	}
 }
 
-int		main()
+int	main(void)
 {
 	printf("%s\n", ft_substr("hello", 1, 3));
 	return (1);

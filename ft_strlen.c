@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 12:53:57 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/26 13:06:41 by a19060383        ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 // мин тесты проходят
 
 #include "../for_school21/libft.h"
 
-size_t ft_strlen (const char *str)
+size_t	ft_strlen (const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != 0)
@@ -24,9 +12,8 @@ size_t ft_strlen (const char *str)
 	return (i);
 }
 
-int main()
+int	main(void)
 {
 	printf("%lu\n", strlen(""));
 	printf("%lu\n", ft_strlen(""));
-
 }
