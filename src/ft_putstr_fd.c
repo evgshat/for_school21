@@ -1,7 +1,6 @@
-// перепроверить путь в include
 // удалить мейн
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

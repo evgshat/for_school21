@@ -1,11 +1,10 @@
 // мин тесты проходят
 
 // вообще правильно поняла?
-// перепроверить путь в include
 // удалить мейн
 // нужна ли проверка на fd = 1?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

@@ -2,7 +2,7 @@
 
 //можно ли два return?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 char	*ft_strnstr (const char *big, const char *little, size_t len)
 {
@@ -43,8 +43,8 @@ char	*ft_strnstr (const char *big, const char *little, size_t len)
 		return (new_big);
 	if (chet < len)
 		return (0);
-	return (0);
 	*/
+	return (0);
 }
 // если little - пустая - вернуть big
 // если нет вхождения lit в big - то вернуть null

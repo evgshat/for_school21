@@ -1,4 +1,4 @@
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 char	*ft_strrchr(char *str, int symbol)
 {

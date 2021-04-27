@@ -1,6 +1,5 @@
 // мин тест проходит
 
-// перепроверить путь в include
 // удалить мейн
 // c - код символа
 // сделать проверку, если с - не int, или если там больше одного символа
@@ -10,7 +9,7 @@
 // int c надо походу к unsigned char привести
 // write не очень работает. в итоге не написала его, а нужен ли он?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	*ft_memset (void *destination, int c, size_t n)
 {
@@ -32,8 +31,6 @@ void	*ft_memset (void *destination, int c, size_t n)
 
 int	main(void)
 {
-	unsigned char	scr[6];
-
-	scr[6] = "hello\0";
+	unsigned char	scr[6] = "hello\0";
 	printf("%s\n", (ft_memset(scr, '2', 3)));
 }

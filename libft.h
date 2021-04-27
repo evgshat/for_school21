@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: a19060383 <a19060383@student.42lyon.fr>    +#+  +:+       +#+        */
+/*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 11:40:28 by a19060383         #+#    #+#             */
-/*   Updated: 2021/04/26 17:17:39 by a19060383        ###   ########lyon.fr   */
+/*   Created: 2021/04/27 19:30:11 by lcharlet          #+#    #+#             */
+/*   Updated: 2021/04/27 19:30:21 by lcharlet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include	<stdlib.h>
 # include	<stdio.h>
 # include	<string.h>
+# include	<ctype.h>
 
 #endif

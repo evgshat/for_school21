@@ -1,6 +1,6 @@
 // мин тесты проходят
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 size_t	ft_strlen (const char *str)
 {

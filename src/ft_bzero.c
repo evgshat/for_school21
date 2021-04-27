@@ -6,7 +6,7 @@
 // нужен ли write?
 // можно ли как-то проверить оригинальную функцию?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

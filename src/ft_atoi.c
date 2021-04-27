@@ -1,6 +1,6 @@
 // доделать
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 int ft_atoi(const char *string)
 {
@@ -13,20 +13,21 @@ int ft_atoi(const char *string)
 	new_str = (char *)string;
 	i = 0;
 	k = 0;
-	while (7 < string[i] > 13 || string[i] == 43)
-		i++;
+	//while ((13 > string[i] > 7) || string[i] == 43)
+	//	i++;
 	while (string[i] == 45)
 	{
 		sign++;
 		i++;
 	}
-	while (48 < string[i] > 57)
-	{
-		new_str[k] == string[i];
-		i++;
-	}
+	//while (48 <= string[i] <= 57)
+	//{
+	//	new_str[k] = string[i];
+	//	i++;
+	//}
 	if (sign % 2 != 0)
-		res * (-1);
+		res = res * (-1);
+	return (i);
 }
 
 int	main(void)

@@ -2,9 +2,8 @@
 
 // удалить мейн
 // нужен ли перенос строки
-// перепроверить путь в include
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

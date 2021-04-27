@@ -1,10 +1,9 @@
 // мин тест не удался, какое-то г пишется после
 
-// перепроверить путь в include
 // удалить мейн
 // почему-то какой-то мусор пишется
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

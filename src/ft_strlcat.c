@@ -1,6 +1,6 @@
 // мин тесты проходят, но код тоже не очень нравится
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 size_t	ft_strlcat (char *dst, const char *src, size_t size)
 {
@@ -36,15 +36,11 @@ size_t	ft_strlcat (char *dst, const char *src, size_t size)
 
 int	main(void)
 {
-	char	dst[10];
-	char	src[10];
-	char	dst1[10];
-	char	src1[10];
+	char	dst[10] = "abc";
+	char	src[10] = "hhh";
+	char	dst1[10] = "abc";
+	char	src1[10] = "hhh";
 
-	dst[10] = "abc";
-	src[10] = "hhh";
-	dst1[10] = "abc";
-	src1[10] = "hhh";
 	printf("%lu\n", strlcat(dst, src, 2));
 	printf("%lu\n", ft_strlcat(dst1, src1, 2));
 }

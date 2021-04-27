@@ -1,10 +1,9 @@
 // доделать
 
-// перепроверить путь в include
 // удалить мейн
 // нужна ли новая строка?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

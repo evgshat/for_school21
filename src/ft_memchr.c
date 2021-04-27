@@ -6,7 +6,7 @@
 // надо ли писать write или достаточно return?
 // почему в прототипе надо передать int, но при это я спокойно могу передать char?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	*ft_memchr( const void *buf, int c, size_t count)
 {
@@ -31,9 +31,8 @@ void	*ft_memchr( const void *buf, int c, size_t count)
 
 int	main(void)
 {
-	unsigned char	buf[6];
+	unsigned char	buf[6] = "hello";
 
-	buf[6] = "hello";
 	printf("%s\n", (memchr(buf, '1', 2)));
 	printf("%s\n", (ft_memchr(buf, 'e', 3)));
 }

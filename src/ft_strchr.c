@@ -2,7 +2,7 @@
 
 // надо ли ретенить или писать налл, если налл? что из этого делать?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 char	*ft_strchr (const char *str, int ch)
 {
@@ -30,11 +30,9 @@ char	*ft_strchr (const char *str, int ch)
 
 int	main(void)
 {
-	char	dst[10];
-	char	dst1[10];
+	char	dst[10] = "abc";
+	char	dst1[10] = "abc";
 
-	dst[10] = "abc";
-	dst1[10] = "abc";
 	printf("%s\n", strchr(dst, 'b'));
 	printf("%s\n", ft_strchr(dst1, 'b'));
 }

@@ -1,14 +1,12 @@
 // я хз как, но мин тест прошел
 
 // удалить мейн
-// перепроверить путь в include
-// пофиксить шапку (надо чтобы мое имя было)
 // что будет, если разделитель так и не встретился
 // NULL если в первых n байтах массива источника встречен символ, код которого соответствует указанному в аргументе c.
 // проверить, если символа больше, чем один
 // как правильно выйти из функции
 // надо ли проверить, что с - это интовое значение?
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 void	*ft_memccpy (void *destination, const void *source, int c, size_t n)
 {
@@ -53,15 +51,11 @@ void	*ft_memccpy (void *destination, const void *source, int c, size_t n)
 
 int	main(void)
 {
-	unsigned char	dest[15];
-	unsigned char	scr[15];
-	unsigned char	dest1[15];
-	unsigned char	scr1[15];
+	unsigned char	dest[15] = "23bkjll";
+	unsigned char	scr[15] = "1234cd";
+	unsigned char	dest1[15] = "23bkjll";
+	unsigned char	scr1[15] = "1234cd";
 
-	dest[15] = "23bkjll";
-	scr[15] = "1234cd";
-	dest1[15] = "23bkjll";
-	scr1[15] = "1234cd";
 	// пока ТУТ не встретится символ или пока не скопируется n байт
 	// нужно, чтобы символ тоже был скопирован
 	printf ("%s\n", memccpy(dest, scr, '4', 4));

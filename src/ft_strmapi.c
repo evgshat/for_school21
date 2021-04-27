@@ -1,10 +1,9 @@
 // не проходят тесты (не понимаю, что значит "применить")
 
 // удалить мейн
-// перепроверить путь в include
 // в смысле "применить" функцию для каждого символа строки?
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

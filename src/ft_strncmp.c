@@ -1,6 +1,6 @@
 // работает неправильно
 
-#include "../for_school21/libft.h"
+#include "../libft.h"
 
 int	ft_strncmp(const char *string1, const char *string2, size_t num)
 {
