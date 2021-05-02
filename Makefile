@@ -6,7 +6,7 @@
 #    By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/27 16:35:40 by lcharlet          #+#    #+#              #
-#    Updated: 2021/04/29 10:20:03 by lcharlet         ###   ########lyon.fr    #
+#    Updated: 2021/05/02 17:03:01 by lcharlet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) *.o
+	$(RM) $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

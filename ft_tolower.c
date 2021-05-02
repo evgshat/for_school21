@@ -9,11 +9,3 @@ int	ft_tolower(int ch)
 		res = ch + 32;
 	return (res);
 }
-
-int	main(void)
-{
-	int	a = 90;
-	int	b = 90;
-	printf("%d\n", tolower(a));
-	printf("%d\n", ft_tolower(b));
-}
