@@ -6,7 +6,7 @@
 /*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 19:30:11 by lcharlet          #+#    #+#             */
-/*   Updated: 2021/05/02 19:10:10 by lcharlet         ###   ########.fr       */
+/*   Updated: 2021/05/07 00:38:23 by lcharlet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 # include <errno.h>
 
 void	*ft_memcpy (void *dst, const void *src, size_t n);
+int		ft_isdigit(int ch);
 
 #endif

@@ -1,65 +1,74 @@
-// доделать
-
-//можно ли два return?
-
 #include "libft.h"
 
-char	*ft_strnstr (const char *big, const char *little, size_t len)
+size_t	new_f(char *new_h, char *new_n)
 {
-	char	*new_big;
-	char	*new_lit;
-	size_t	chet;
-	//char	*res;
+	size_t	i;
+	size_t	cnt;
 
-	new_big = (char *)big;
-	new_lit = (char *)little;
-	chet = 0;
-	len = 0;
-	/*
-	while (new_big != 0)
+	i = 0;
+	cnt = 0;
+	while (new_n[i] != '\0')
 	{
-	while (new_lit != 0)
+		if (new_h[i] != new_n[i])
+			return (0);
+		if (new_h[i] == new_n[i])
+		{
+			i++;
+			cnt++;
+		}
+	}
+	return (cnt);
+}
+
+size_t	size_new_n(char *new_n)
+{
+	size_t	i;
+	size_t	cnt;
+
+	i = 0;
+	cnt = 0;
+	while (new_n[i++] != '\0')
+		cnt++;
+	return (cnt);
+}
+
+char	*ft_strnstr (const char *haystack, const char *needle, size_t len)
+{
+	char	*new_h;
+	char	*new_n;
+	size_t	i;
+	size_t	cnt;
+	size_t	res;
+
+	new_h = (char *)haystack;
+	new_n = (char *)needle;
+	i = 0;
+	cnt = 0;
+	if (len == 0 || new_n[i] == '\0')
+		return (new_h);
+	while (*new_h != '\0' && cnt < len)
 	{
-		if (*new_big == *new_lit)
+		if (*new_h != *new_n)
 		{
-			chet++;
-			new_big++;
-			new_lit++;
+			new_h++;
+			cnt++;
 		}
-		if (*new_big != *new_lit)
+		if (*new_h == *new_n)
 		{
-			new_big++;
-			new_lit++;
-			chet = 0;
+			if (cnt + size_new_n(new_n) > len)
+				return (0);
+			res = new_f(new_h, new_n);
+			if (res != 0)
+				return (new_h);
+			if (res == 0)
+			{
+				if (res + cnt > len)
+					return (0);
+				new_h = new_h + res;
+				cnt++;
+			}
 		}
-		if (chet == len)
-			break ;
+
 	}
-		new_big++;
-		new_lit = new_lit - len;
-	}
-	printf("%lu\n", chet);
-	printf("%s\n", new_big);
-	if (chet == len)
-		return (new_big);
-	if (chet < len)
-		return (0);
-	*/
 	return (0);
 }
-// если little - пустая - вернуть big
-// если нет вхождения lit в big - то вернуть null
-// если ок - вернуть указатель, где первое вхождение
-// надо, чтобы еще входит '/0' символ. То есть, если ищем 3 в 232, то надо искать не 1 символ, а два
-/*
-int	main(void)
-{
-	char	big[10] = "133435";
-	char	lit[10] = "334";
-	char	big1[10] = "133435";
-	char	lit1[10] = "334";
-
-	//printf ("%s\n", strnstr(big, lit, 4));
-	printf ("%s\n", ft_strnstr(big1, lit1, 3));
-}
-*/

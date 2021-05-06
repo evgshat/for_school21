@@ -1,48 +1,48 @@
-// мин тесты проходят, но код тоже не очень нравится
-
 #include "libft.h"
 
 size_t	ft_strlcat (char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
 	char	*new_src;
+	char	*new_dst;
 	size_t	cnt;
 
 	new_src = (char *)src;
+	new_dst = (char *)dst;
 	cnt = 0;
 	i = 0;
-	while (dst[i] != '\0')
-	{
-		i++;
-	}
-	while (i < size - 1)
-	{
-		dst[i] = new_src[i];
-		i++;
-	}
-	i = 0;
-	while (dst[i] != '\0')
-	{
+	j = 0;
+	while (new_dst[i++] != 0)
 		cnt++;
-		i++;
-	}
+	if (size == 0)
+		return (cnt);
 	i = 0;
-	while (new_src[i] != '\0')
-	{
-		cnt++;
+	while (new_dst[i] != '\0')
 		i++;
+	while (j < (size - 1) && (new_src[j] != '\0'))
+	{
+		new_dst[i] = new_src[j];
+		i++;
+		j++;
 	}
-	return (cnt - 1);
+	new_dst[i] = '\0';
+	//rintf("%s\n", new_dst);
+	i = 0;
+	while (new_dst[i++] != 0)
+		cnt++;
+	//printf ("%lu\n", cnt);
+	return (cnt-1);
 }
-/*
+
 int	main(void)
 {
-	char	dst[10] = "abc";
-	char	src[10] = "hhh";
-	char	dst1[10] = "abc";
-	char	src1[10] = "hhh";
+	char	dst[10] = "a";
+	char	src[10] = "h";
+	char	dst1[10] = "a";
+	char	src1[10] = "h";
 
-	printf("%lu\n", strlcat(dst, src, 2));
-	printf("%lu\n", ft_strlcat(dst1, src1, 2));
+	printf("%lu\n", strlcat(dst, src, 4));
+	printf("%lu\n", ft_strlcat(dst1, src1, 4));
 }
-*/
+
