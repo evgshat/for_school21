@@ -31,7 +31,7 @@ char	*ft_itoa(int n)
 		new_s[i] = n_o[n_o_i - 1] + '0';
 		n_o_i--;
 	}
-	return (new_s);
+ 	return (new_s);
 }
 /*
 int main(void)

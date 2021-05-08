@@ -7,7 +7,6 @@ char	*ft_strchr (const char *s, int c)
 
 	new_s = (char *)s;
 	ch = (char)c;
-
 	if (ch == '\0')
 	{
 		while (*new_s)
@@ -20,5 +19,5 @@ char	*ft_strchr (const char *s, int c)
 			return (new_s);
 		new_s++;
 	}
-	return (0);
+	return (NULL);
 }

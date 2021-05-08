@@ -2,50 +2,28 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		s;
-	int		cnt;
-	char	*new_s;
+	char	*s2;
+	char	*res;
+	char	*r;
 
-	i = 0;
-	j = 0;
-	s = 0;
-	cnt = 0;
-	while (s1[i] != '\0')
+	while ((*s1 != '\0') && (ft_strchr(set, *s1) != NULL))
+		s1++;
+	s2 = (char *)s1;
+	while (*s2 != '\0')
+		s2++;
+	s2--;
+	while ((s2 > s1) && (ft_strchr(set, *s2) != NULL))
+		s2--;
+	res = malloc(s2 - s1 + 2);
+	if (res == NULL)
+		return (NULL);
+	r = res;
+	while (s1 <= s2)
 	{
-		cnt++;
-		i++;
+		*r = *s1;
+		s1++;
+		r++;
 	}
-	new_s = (char *) malloc(cnt);
-	if (new_s == 0)
-		return (0);
-	i = 0;
-	while (s1[i] == set[j])
-	{
-		new_s[s] = s1[i + 1];
-		i++;
-		j++;
-	}
-	while (s1[i] != '\0')
-	{
-		new_s[s] = s1[i];
-		s++;
-		i++;
-	}
-	j = 0;
-	while (s1[cnt - 1] == set[j])
-	{
-		new_s[s - 1] = '\0';
-		cnt--;
-		s--;
-		j++;
-	}
-	return (new_s);
+	*r = '\0';
+	return (res);
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_strtrim("gahelloaa", "gaaa"));
-}
-*/
