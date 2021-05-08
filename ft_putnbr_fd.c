@@ -1,8 +1,3 @@
-// доделать
-
-// удалить мейн
-// нужна ли новая строка?
-
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -14,8 +9,6 @@ void	ft_putnbr_fd(int n, int fd)
 
 	i = 0;
 	n_o_i = 0;
-	if (fd != 1)
-		write(1, "NULL", 5);
 	new_s = malloc (100);
 	if (n < 0)
 	{
@@ -39,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	while (new_s[i] != '\0')
 	{
-		write (1, &new_s[i], 1);
+		write (fd, &new_s[i], 1);
 		i++;
 	}
 }

@@ -1,8 +1,3 @@
-// мин тесты проходят
-
-// удалить мейн
-// проверить, если пустое значение
-
 #include "libft.h"
 
 char	*ft_itoa(int n)
@@ -16,7 +11,7 @@ char	*ft_itoa(int n)
 	n_o_i = 0;
 	new_s = (char *) malloc(15 * sizeof(char));
 	if (new_s == 0)
-		write (1, "NULL", 5);
+		return (0);
 	if (n < 0)
 	{
 		new_s[i] = '-';

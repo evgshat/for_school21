@@ -1,8 +1,3 @@
-// не проходят тесты (не понимаю, что значит "применить")
-
-// удалить мейн
-// в смысле "применить" функцию для каждого символа строки?
-
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -22,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	new_s = (char *)malloc(cnt * sizeof(char));
 	if (new_s == 0)
-		write(1, "NULL", 5);
+		return (0);
 	i = 0;
 	while (s[i] != '\0')
 	{

@@ -3,9 +3,12 @@
 void	*ft_calloc(size_t number, size_t size)
 {
 	void	*new;
+	size_t	cnt;
 
-	new = malloc(number * size);
+	cnt = number * size;
+	new = malloc(cnt);
 	if (new == 0)
-		return (NULL);
+		return (0);
+	ft_bzero(new, cnt);
 	return (new);
 }

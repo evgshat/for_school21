@@ -1,13 +1,3 @@
-// мин тесты проходят
-
-// использовать free
-// удалить мейн
-// проверить вариант, если символ с вообще не встречается
-// почему-то в конце процент
-// надо ли переносить на новую строку?
-// добавить конец строки (пишется bash)
-// проверить кейсы, когда разделителя нет в строке, которая передается
-
 #include "libft.h"
 
 char	**ft_split(char const *s, char c)
@@ -28,13 +18,13 @@ char	**ft_split(char const *s, char c)
 	}
 	new_s = (char **) malloc(j * sizeof(char *));
 	if (new_s == 0)
-		write(1, "NULL", 5);
+		return (0);
 	i = 0;
 	while (i < j)
 	{
 		new_s[i] = (char *) malloc(100 * sizeof(char));
 		if (new_s[i] == 0)
-			write(1, "NULL", 5);
+			return (0);
 		i++;
 	}
 	i = 0;

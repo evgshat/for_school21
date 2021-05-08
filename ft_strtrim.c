@@ -1,10 +1,3 @@
-// мин тесты проходят
-
-// нужна ли проверка, если set больше, чем s1
-// не уверена, что правильно поняла задание, сравнить, попробовать разные тесты
-// удалить мейн
-// "gahelloaa", "gaaa" - правильно ли работает?
-
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -26,7 +19,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	new_s = (char *) malloc(cnt);
 	if (new_s == 0)
-		write (1, "NULL", 5);
+		return (0);
 	i = 0;
 	while (s1[i] == set[j])
 	{

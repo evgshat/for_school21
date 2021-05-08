@@ -19,14 +19,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	else
 	{
-		write(1, "Не удалось выделить память", 26);
-		return (NULL);
+		return (0);
 	}
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_substr("hello", 1, 3));
-	return (1);
-}
-*/
