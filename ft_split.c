@@ -5,50 +5,40 @@ char	**ft_split(char const *s, char c)
 	char	**new_s;
 	int		i;
 	int		j;
-	int		k;
+	int		cnt;
 
 	i = 0;
-	j = 2;
-	k = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			j++;
-		i++;
-	}
-	new_s = (char **) malloc(j * sizeof(char *));
+	cnt = strlen(s);
+	new_s = (char **) malloc(cnt * sizeof(char *));
 	if (new_s == 0)
 		return (0);
-	i = 0;
-	while (i < j)
+	while (*s != '\0')
 	{
-		new_s[i] = (char *) malloc(100 * sizeof(char));
+		j = 0;
+		cnt = 0;
+		while (*s == c)
+			s++;
+		while (*s != c && *s != '\0')
+		{
+			cnt++;
+			s++;
+		}
+		if (cnt == 0)
+			break ;
+		//printf("%d\n", cnt);
+		new_s[i] = (char *) malloc(cnt * sizeof(char) + 1);
 		if (new_s[i] == 0)
 			return (0);
-		i++;
+		s = s - cnt;
+		while (*s != c && *s != '\0')
+			{
+				new_s[i][j] = *s;
+				j++;
+				s++;
+			}
+		new_s[i][j] = '\0';
+	i++;
 	}
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			new_s[j][k] = s[i];
-		}
-		if (s[i] == c)
-		{
-			new_s[j][k] = '\0';
-			j++;
-			k = -1;
-		}
-		i++;
-		k++;
-	}
+	new_s[i] = NULL;
 	return (new_s);
 }
-/*
-int	main(void)
-{
-	printf ("%s %s %s", ft_split("Hell-tw-rld", '-')[0], ft_split("Hell-tw-rld", '-')[1], ft_split("Hell-tw-rld", '-')[2]);
-}
-*/
