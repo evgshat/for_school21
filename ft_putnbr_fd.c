@@ -1,101 +1,47 @@
 #include "libft.h"
-/*
-static void	res(int n_n, int stepen, long m, int fd)
-{
-	char	ch;
-	int		cnt;
 
-	cnt = 0;
-	while (m > 9)
-	{
-		n_n = m / stepen;
-		cnt = n_n * stepen;
-		ch = m / stepen + '0';
-		write (fd, &ch, 1);
-		m = m - cnt;
-		stepen = stepen / 10;
-	}
-	ch = m + '0';
-	write (fd, &ch, 1);
-}
-
-static long	fu_m(long m, int fd)
-{
-	if (m < 0)
-	{
-		m = -m;
-		write (fd, "-", 1);
-	}
-	return (m);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	m;
-	int		cnt;
-	int		n_n;
-	int		stepen;
-
-	m = n;
-	cnt = 0;
-	stepen = 1;
-	n_n = 0;
-	if (m == 0)
-	{
-		write (fd, "0", 1);
-		return ;
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		cnt++;
-	}
-	m = fu_m(m, fd);
-	while (cnt-- != 1)
-		stepen = stepen * 10;
-	res (n_n, stepen, m, fd);
-}
-
-int	main()
-{
-	ft_putnbr_fd(11529602, 1);
-}
-*/
-
-void	ft_putnbr_fd(int n, int fd)
+static void	res(int n, int fd, int ost, int i)
 {
 	char	res[11];
-	int		ost;
-	int		i;
-	long	m;
 
-	i = 0;
-	m = n;
-	if (m == 0)
+	while (n > 0)
 	{
-		write (fd, "0", 1);
-		return ;
-	}
-	if (m < 0)
-	{
-		write (fd, "-", 1);
-		m = m * (-1);
-	}
-	while (m > 0)
-	{
-		ost = m % 10;
-		m = m / 10;
+		ost = n % 10;
+		n = n / 10;
 		res[i] = ost + '0';
 		i++;
 	}
 	while (i >= 0)
 	{
-		write (fd, &res[i], 1);
+		write (fd, &res[i - 1], 1);
 		i--;
 	}
 }
 
-int	main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putnbr_fd(2147483647, 1);
+	int		ost;
+	int		i;
+
+	i = 0;
+	ost = 0;
+	if (n == 0)
+	{
+		write (fd, "0", 1);
+		return ;
+	}
+	if (n == INT_MIN || n == INT_MAX)
+	{
+		if (n == INT_MIN)
+			write (fd, "-2147483648", 11);
+		if (n == INT_MAX)
+			write (fd, "2147483647", 10);
+		return ;
+	}
+	if (n < 0)
+	{
+		write (fd, "-", 1);
+		n = n * (-1);
+	}
+	res(n, fd, ost, i);
 }
