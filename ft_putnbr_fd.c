@@ -1,44 +1,101 @@
 #include "libft.h"
+/*
+static void	res(int n_n, int stepen, long m, int fd)
+{
+	char	ch;
+	int		cnt;
+
+	cnt = 0;
+	while (m > 9)
+	{
+		n_n = m / stepen;
+		cnt = n_n * stepen;
+		ch = m / stepen + '0';
+		write (fd, &ch, 1);
+		m = m - cnt;
+		stepen = stepen / 10;
+	}
+	ch = m + '0';
+	write (fd, &ch, 1);
+}
+
+static long	fu_m(long m, int fd)
+{
+	if (m < 0)
+	{
+		m = -m;
+		write (fd, "-", 1);
+	}
+	return (m);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*new_s;
-	int		i;
-	int		n_o_i;
-	int		n_o[15];
+	long	m;
+	int		cnt;
+	int		n_n;
+	int		stepen;
 
-	i = 0;
-	n_o_i = 0;
-	new_s = malloc (100);
-	if (n < 0)
+	m = n;
+	cnt = 0;
+	stepen = 1;
+	n_n = 0;
+	if (m == 0)
 	{
-		new_s[i] = '-';
-		i++;
-		n = -n;
+		write (fd, "0", 1);
+		return ;
 	}
-	while (n > 9)
+	while (n != 0)
 	{
-		n_o[n_o_i] = n % 10;
 		n = n / 10;
-		n_o_i++;
+		cnt++;
 	}
-	new_s[i] = n + '0';
-	while (n_o_i - 1 >= 0)
-	{
-		i++;
-		new_s[i] = n_o[n_o_i - 1] + '0';
-		n_o_i--;
-	}
-	i = 0;
-	while (new_s[i] != '\0')
-	{
-		write (fd, &new_s[i], 1);
-		i++;
-	}
+	m = fu_m(m, fd);
+	while (cnt-- != 1)
+		stepen = stepen * 10;
+	res (n_n, stepen, m, fd);
 }
-/*
-int	main(void)
+
+int	main()
 {
-	ft_putnbr_fd(49, 1);
+	ft_putnbr_fd(11529602, 1);
 }
 */
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	res[11];
+	int		ost;
+	int		i;
+	long	m;
+
+	i = 0;
+	m = n;
+	if (m == 0)
+	{
+		write (fd, "0", 1);
+		return ;
+	}
+	if (m < 0)
+	{
+		write (fd, "-", 1);
+		m = m * (-1);
+	}
+	while (m > 0)
+	{
+		ost = m % 10;
+		m = m / 10;
+		res[i] = ost + '0';
+		i++;
+	}
+	while (i >= 0)
+	{
+		write (fd, &res[i], 1);
+		i--;
+	}
+}
+
+int	main()
+{
+	ft_putnbr_fd(2147483647, 1);
+}

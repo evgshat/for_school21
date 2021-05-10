@@ -1,41 +1,57 @@
 #include "libft.h"
 
+static char	*int_char(int sign, int cnt, long n)
+{
+	int		ost;
+	char	*str;
+
+	ost = 0;
+	str = malloc(cnt + 1);
+	if (str == 0)
+		return (NULL);
+	if (sign == 1)
+		str[0] = '-';
+	if (n == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
+	str[cnt] = '\0';
+	while (cnt >= 0)
+	{
+		ost = n % 10;
+		str[cnt - 1] = ost + '0';
+		n = n / 10;
+		if (n == 0)
+			break ;
+		cnt--;
+	}
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
-	char	*new_s;
-	int		i;
-	int		n_o[15];
-	int		n_o_i;
+	int		cnt;
+	int		sign;
+	long	cpy_n;
+	char	*str;
 
-	i = 0;
-	n_o_i = 0;
-	new_s = (char *) malloc(15 * sizeof(char));
-	if (new_s == 0)
-		return (0);
+	sign = 0;
+	cnt = 0;
+	cpy_n = n;
 	if (n < 0)
 	{
-		new_s[i] = '-';
-		i++;
-		n = -n;
+		cnt++;
+		sign = 1;
+		cpy_n = cpy_n * (-1);
 	}
-	while (n > 9)
+	else if (n == 0)
+		cnt = 1;
+	while (n != 0)
 	{
-		n_o[n_o_i] = n % 10;
 		n = n / 10;
-		n_o_i++;
+		cnt++;
 	}
-	new_s[i] = n + '0';
-	while (n_o_i - 1 >= 0)
-	{
-		i++;
-		new_s[i] = n_o[n_o_i - 1] + '0';
-		n_o_i--;
-	}
- 	return (new_s);
+	str = int_char(sign, cnt, cpy_n);
+	return (str);
 }
-/*
-int main(void)
-{
-	printf ("%s\n", ft_itoa(10));
-}
-*/
