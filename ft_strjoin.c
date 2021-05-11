@@ -16,17 +16,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_s = (char *) malloc(i);
 	if (new_s == 0)
 		return (0);
-	j = 0;
-	i = 0;
-	while (s1[j] != '\0')
-	{
+	j = -1;
+	i = -1;
+	while (s1[++j] != '\0')
 		new_s[j] = s1[j];
-		j++;
-	}
-	while (s2[i] != '\0')
+	while (s2[++i] != '\0')
 	{
 		new_s[j] = s2[i];
-		i++;
 		j++;
 	}
 	new_s[j] = '\0';
