@@ -6,10 +6,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 	char	*new_h;
 
+	i = 0;
 	new_h = (char *)haystack;
 	if (*needle == '\0' || len == 0)
 		return (new_h);
-	i = 0;
 	while (i < len && new_h[i] != '\0')
 	{
 		if (new_h[i] == needle[0])
