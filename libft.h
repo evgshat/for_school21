@@ -6,7 +6,7 @@
 /*   By: lcharlet <lcharlet@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 19:30:11 by lcharlet          #+#    #+#             */
-/*   Updated: 2021/05/11 14:32:00 by lcharlet         ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 19:29:27 by lcharlet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <ctype.h>
-# include <errno.h>
 # include <limits.h>
 
 int			ft_atoi(const char *string);

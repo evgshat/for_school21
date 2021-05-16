@@ -9,6 +9,7 @@ static char	*int_char(int sign, int cnt, long n)
 	str = malloc(cnt + 1);
 	if (str == 0)
 		return (NULL);
+	str[cnt] = '\0';
 	if (sign == 1)
 		str[0] = '-';
 	if (n == 0)
@@ -16,7 +17,6 @@ static char	*int_char(int sign, int cnt, long n)
 		str[0] = '0';
 		return (str);
 	}
-	str[cnt] = '\0';
 	while (cnt >= 0)
 	{
 		ost = n % 10;

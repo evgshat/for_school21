@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 static void	free_new_s(char **new_s, size_t j)
 {
 	size_t	i;
